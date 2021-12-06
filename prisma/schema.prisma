@@ -15,6 +15,6 @@ model Filme {
   imagem              String?
   data_lancamento     String?
   tempo_duracao       String?
-  genero              String?
-  participantes       String?
+  genero              String
+  participantes       String
 }

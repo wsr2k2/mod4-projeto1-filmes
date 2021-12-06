@@ -1,7 +1,5 @@
 import { IsArray, IsInt, IsNotEmpty, IsString } from "class-validator";
 export class CreateFilmeDto {
-  @IsNotEmpty()
-  @IsInt()
   id: number;
 
   @IsNotEmpty()
@@ -13,18 +11,16 @@ export class CreateFilmeDto {
   imagem: string;
 
   @IsNotEmpty()
-  @IsInt()
-  data_lancamento: number;
+  @IsString()
+  data_lancamento: string;
 
   @IsNotEmpty()
   @IsString()
   tempo_duracao: string;
 
   @IsNotEmpty()
-  @IsArray()
-  genero: [];
+  genero: string;
 
   @IsNotEmpty()
-  @IsArray()
-  participantes: [];
+  participantes: string;
 }
