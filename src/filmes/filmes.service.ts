@@ -11,33 +11,28 @@ const lista = [];
 export class FilmesService {
   constructor(private prisma: PrismaService) {}
   
-    create(createFilmeDto: CreateFilmeDto) {
-    lista.push(createFilmeDto);
-    return `Filme adicionado com sucesso: ${createFilmeDto.nome}`;
-  }
-
-  async createPrisma(createFilmeDto: CreateFilmeDto): Promise<Filme> {
+  async create(createFilmeDto: CreateFilmeDto): Promise<Filme> {
     return await this.prisma.filme.create({
       data: { ...createFilmeDto },
     });
   }
 
-  async findAllPrisma(): Promise<Filme[]> {
+  async findAll(): Promise<Filme[]> {
     return await this.prisma.filme.findMany();
   }
 
-  async findOnePrisma(id: number): Promise<Filme> {
+  async findOne(id: number): Promise<Filme> {
     return await this.prisma.filme.findUnique({ where: {id}});
   }
 
-  async updatePrisma(id: number, updateFilmeDto: UpdateFilmeDto): Promise<Filme> {
+  async update(id: number, updateFilmeDto: UpdateFilmeDto): Promise<Filme> {
     return await this.prisma.filme.update({
       data:{...updateFilmeDto},
       where:{id}
     });
   }
 
-  async removePrisma(id: number) {
+  async remove(id: number) {
     return await this.prisma.filme.delete({ where: {id}});
   }
 }

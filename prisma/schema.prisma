@@ -15,6 +15,25 @@ model Filme {
   imagem              String?
   data_lancamento     String?
   tempo_duracao       String?
-  genero              String
-  participantes       String
+  genero              Genero    @relation(fields: [generoid], references: [id]) 
+  generoid            Int
+  participante        Participante[]
+  participanteid      Int
+}
+
+
+model Genero {
+  id                  Int       @default(autoincrement()) @id
+  nome                String
+  filmes              Filme[]
+  filmeid             Int
+}
+
+model Participante {
+  id                  Int       @default(autoincrement()) @id
+  nome                String
+  imagem              String
+  nascimento          String
+  filme               Filme     @relation(fields: [filmeid], references: [id])
+  filmeid             Int
 }

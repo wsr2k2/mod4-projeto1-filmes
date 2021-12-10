@@ -10,26 +10,26 @@ export class FilmesController {
 
   @Post()
   create(@Body() createFilmeDto: CreateFilmeDto) {
-    return this.filmesService.createPrisma(createFilmeDto);
+    return this.filmesService.create(createFilmeDto);
   }
 
   @Get()
   findAll() {
-    return this.filmesService.findAllPrisma();
+    return this.filmesService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.filmesService.findOnePrisma(+id);
+    return this.filmesService.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateFilmeDto: UpdateFilmeDto) {
-    return this.filmesService.updatePrisma(+id, updateFilmeDto);
+    return this.filmesService.update(+id, updateFilmeDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.filmesService.removePrisma(+id);
+    return this.filmesService.remove(+id);
   }
 }

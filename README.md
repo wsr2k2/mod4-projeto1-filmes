@@ -1,73 +1,151 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# Projeto API Netflix - Módulo 4
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+#### Nesse projeto iremos utilizar um framework para back-end que auxilia no desenvolvimento de aplicações eficientes, o NestJs.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+O NestJs utiliza como padrão TypeScript e possui sintaxe parecida com o Angular. E falando nisso, o NestJs também utiliza o Express por "debaixo dos panos."
 
-## Installation
+Para dar início no projeto, precisamos instalar o NestJs no nosso projeto, com o seguinte comando:
 
-```bash
-$ npm install
+``npm i -g @nestjs/cli``
+
+Feito isso, vamos criar nosso projeto, usando o comando: ``nest new nome-do-projeto``
+
+Em nosso projeto usamos o seguinte: ``nest new mod4-projeto1-filmes``
+
+Para salvar os dados utilizamos o banco de dados PostgreSql e como meio de comunicação foi usado o Prisma.
+
+O comando utilizado para a instalação do Prisma é: ``npm install prisma --save-dev``
+
+Utilizar a configuração básica do Prisma: ``npx prisma init``
+
+Devemos realizar o comando a seguir para a criação do Prisma Client e assim pode acessar e utilizar suas funcionalidades:
+
+``npm install @prisma/client``
+
+Feito isso, será criado a pasta prisma>schema.prisma, local onde será criado nosso modelo de nosso cadastro no banco de dados, onde constam os campos e tipos de dados a serem recebidos, bem como a indicação de link entre os schemas (one to many).
+
+![schema](C:\Users\wsr2k\Desktop\schema.png)
+
+O schema utilizado em nosso projeto, foi conforme a imagem acima.
+
+Após a criação do schema, devemos realizar os seguintes comando, para a criação no PostgreSql:
+
+``npx prisma db push``
+
+``npx prisma generate``
+
+##### Obs.: Lembrando que sempre que algo no schema for alterado, devemos realizar os comandos acima novamente, para que nossas tabelas estejam sempre atualizadas e em funcionamento.
+
+Criar uma pasta lib e dentro dessa, realizar os seguintes comandos no terminal:
+
+``mkdir lib`` criação da pasta lib.
+
+``touch lib/prisma.ts`` para usuários de Mac ou Linux esse comando criará o arquivo ``prisma.ts`` na pasta lib, no windows devemos criar esse arquivo manualmente e inserir o seguinte código:
+
+```javascript
+import { PrismaClient } from '@prisma/client';
+
+let prisma: PrismaClient;
+
+if (process.env.NODE_ENV === 'production') {
+  prisma = new PrismaClient();
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient();
+  }
+  prisma = global.prisma;
+}
+
+export default prisma;
 ```
 
-## Running the app
+Agora, sempre que precisar acessar seu banco de dados, você pode importar a instância do prisma para o arquivo onde for necessária.
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
+Criando nossos recursos utilizando a praticidade do NestJs.
 
-## Test
+Para criar um recurso novo, podemos utilizar um comando muito legal do NestJs, onde quando é criado o novo recurso já são criados as pastas estruturais do recurso, classes DTO e o CRUD pronto para utilização.
 
-```bash
-# unit tests
-$ npm run test
+Utilize o comando: ``nest g resource nome_do_recurso``
 
-# e2e tests
-$ npm run test:e2e
+Em nosso projeto usamos: ``nest g resource filmes``  , ``nest g resource genero`` , ``nest g resource participante``
 
-# test coverage
-$ npm run test:cov
-```
+Após as alterações nas dependências e rotas dos CRUDs nosso projeto está pronto para testarmos.
 
-## Support
+Iremos utilizar nesse primeiro momento o ``Prisma Studio`` para realizarmos os primeiros testes de cadastros.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Comando a ser realizado: ``npx prisma studio`` 
 
-## Stay in touch
+Deverá abrir uma janela em seu navegador igual a esta:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+![](C:\Users\wsr2k\Desktop\readme\prisma.png)
 
-## License
+Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, conforme a imagem abaixo:
 
-Nest is [MIT licensed](LICENSE).
+* Clicar em: ``Add record``
+* Id é gerado automaticamente
+* Definir o ``gênero`` do filme (exemplo: Animação)
+* Clicar em ``SAVE 1 CHANGE.``
+
+![](C:\Users\wsr2k\Desktop\readme\cadastro genero.png)
+
+Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``FILME``. Conforme imagem abaixo:
+
+* Id gerado automaticamente.
+* Preencher os campos a seguir: ``nome`` , ``url imagem``, ``data de lançamento`` , ``duração do filme``, escolher o ``gênero`` na lista 
+* Clicar em ``Save 1 change``
+
+![](C:\Users\wsr2k\Desktop\readme\cadastro filme.png)
+
+Após o cadastro, a tela ficará assim:
+
+![](C:\Users\wsr2k\Desktop\readme\filme cadastrado.png)
+
+Logo após o cadastro do filme, caso o usuário desejar, pode cadastrar quem estrelou ou co-estrelou o filme, bastando apenas inserir na aba ``participante``, com os seguintes dados:
+
+* Id gerado automaticamente
+* Nome
+* Url da imagem
+* Nascimento
+* Escolher o filme a qual participou
+
+Para deletar um registro, caso o filmes tenha um ``participante`` relacionado, o usuário primeiramente deve excluir o ``participante`` e após isso excluir o ``filme`` selecionado. Para isso basta selecionar o item e clicar em ``Delete 1 record`` em seguida ``Save 1 change``
+
+Nesse aplicativo também temos como realizar todos esses passos diretamente em um API Client, por exemplo: Postman, Thunder Client, Insominia, dentre outros.
+
+Utilizado aqui o Thunder Client pela facilidade de estar diretamente atrelado ao Vs Code.
+
+Para inicializar nossa aplicação no Vs Code, devemos realizar o seguinte comando: ``npm run start:dev`` 
+
+Disponibilizado uma collection com os comandos dos CRUDs das rotas: ``filmes`` , ``genero`` , ``participante``	
+
+Na imagem abaixo, mostrado a estrutura em Json, dados a serem inseridos e tipos dos dados esperados.
+
+![image-20211209221304523](C:\Users\wsr2k\AppData\Roaming\Typora\typora-user-images\image-20211209221304523.png)
+
+No quadro a esquerda, usando a estrutura Json, o usuário deverá inserir os seguintes campos e tipos esperados:
+
+* ``nome`` inserir o nome do filme { tipo de dado: String }
+
+* ``imagem`` inserir a url da imagem desejada { tipo de dado: String }
+
+* ``data_lacamento`` inserir a data de lançamento do filme { tipo de dado: String }
+
+* ``tempo_duracao`` inserir a duração do filme { tipo de dado: String }
+
+* ``generoid`` inserir o ID do gênero do filme { tipo de dado: Number }
+
+* ``particpanteid`` inserir o ID do participante do filme { tipo de dado: Number }
+
+  |   Rotas    |         Rota Filmes          |         Rota Genero          |         Rota Participante          |   Retorno Esperado    |
+  | :--------: | :--------------------------: | :--------------------------: | :--------------------------------: | :-------------------: |
+  |  ``GET``   |  ``localhost:3000/filmes``   |  ``localhost:3000/genero``   |  ``localhost:3000/participante``   |    ``Lista todos``    |
+  |  ``GET``   | ``localhost:3000/filmes/id`` | ``localhost:3000/genero/id`` | ``localhost:3000/participante/id`` | ``Lista um cadastro`` |
+  |  ``POST``  |  ``localhost:3000/filmes/``  |  ``localhost:3000/genero/``  |  ``localhost:3000/participante/``  |   ``Cadastra novo``   |
+  | ``PATCH``  | ``localhost:3000/filmes/id`` | ``localhost:3000/genero/id`` | ``localhost:3000/participante/id`` |  ``Altera cadastro``  |
+  | ``DELETE`` | ``localhost:3000/filmes/id`` | ``localhost:3000/genero/id`` | ``localhost:3000/participante/id`` |  ``Exclui cadastro``  |
+
+  
