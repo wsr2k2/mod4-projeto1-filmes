@@ -1,7 +1,5 @@
 # Projeto API Netflix - Módulo 4
 
-
-
 #### Nesse projeto iremos utilizar um framework para back-end que auxilia no desenvolvimento de aplicações eficientes, o NestJs.
 
 O NestJs utiliza como padrão TypeScript e possui sintaxe parecida com o Angular. E falando nisso, o NestJs também utiliza o Express por "debaixo dos panos."
@@ -90,11 +88,7 @@ Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, c
 * Definir o ``gênero`` do filme (exemplo: Animação)
 * Clicar em ``SAVE 1 CHANGE.``
 
-<<<<<<< HEAD
 ![](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/prisma%20studio.png)
-=======
-![alt cad_genero](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/cadastro%20genero.png?raw=true)
->>>>>>> 875b19583e4a3aa3a95aa33b84f4f091a2844a89
 
 Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``FILME``. Conforme imagem abaixo:
 
