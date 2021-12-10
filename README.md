@@ -135,7 +135,7 @@ No quadro a esquerda, usando a estrutura Json, o usuário deverá inserir os seg
 
 * ``generoid`` inserir o ID do gênero do filme { tipo de dado: Number }
 
-* ``particpanteid`` inserir o ID do participante do filme { tipo de dado: Number }
+* ``participanteid`` inserir o ID do participante do filme { tipo de dado: Number }
 
   |   Rotas    |         Rota Filmes          |         Rota Genero          |         Rota Participante          |   Retorno Esperado    |
   | :--------: | :--------------------------: | :--------------------------: | :--------------------------------: | :-------------------: |
