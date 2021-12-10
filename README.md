@@ -62,7 +62,6 @@ export default prisma;
 Agora, sempre que precisar acessar seu banco de dados, você pode importar a instância do prisma para o arquivo onde for necessária.
 
 
-
 Criando nossos recursos utilizando a praticidade do NestJs.
 
 Para criar um recurso novo, podemos utilizar um comando muito legal do NestJs, onde quando é criado o novo recurso já são criados as pastas estruturais do recurso, classes DTO e o CRUD pronto para utilização.
