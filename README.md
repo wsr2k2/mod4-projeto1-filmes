@@ -90,7 +90,7 @@ Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, c
 * Definir o ``gênero`` do filme (exemplo: Animação)
 * Clicar em ``SAVE 1 CHANGE.``
 
-![](D:\mod4-projeto1-filmes\img\cadastro genero.png)
+![](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/prisma%20studio.png)
 
 Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``FILME``. Conforme imagem abaixo:
 
