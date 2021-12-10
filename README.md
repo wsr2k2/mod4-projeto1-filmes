@@ -81,7 +81,7 @@ Comando a ser realizado: ``npx prisma studio``
 
 Deverá abrir uma janela em seu navegador igual a esta:
 
-![](C:\Users\wsr2k\Desktop\readme\prisma.png)
+![](D:\mod4-projeto1-filmes\img\prisma.png)
 
 Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, conforme a imagem abaixo:
 
@@ -90,7 +90,7 @@ Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, c
 * Definir o ``gênero`` do filme (exemplo: Animação)
 * Clicar em ``SAVE 1 CHANGE.``
 
-![](C:\Users\wsr2k\Desktop\readme\cadastro genero.png)
+![](D:\mod4-projeto1-filmes\img\cadastro genero.png)
 
 Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``FILME``. Conforme imagem abaixo:
 
@@ -98,11 +98,11 @@ Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``
 * Preencher os campos a seguir: ``nome`` , ``url imagem``, ``data de lançamento`` , ``duração do filme``, escolher o ``gênero`` na lista 
 * Clicar em ``Save 1 change``
 
-![](C:\Users\wsr2k\Desktop\readme\cadastro filme.png)
+![](D:\mod4-projeto1-filmes\img\cadastro filme.png)
 
 Após o cadastro, a tela ficará assim:
 
-![](C:\Users\wsr2k\Desktop\readme\filme cadastrado.png)
+![](D:\mod4-projeto1-filmes\img\filme cadastrado.png)
 
 Logo após o cadastro do filme, caso o usuário desejar, pode cadastrar quem estrelou ou co-estrelou o filme, bastando apenas inserir na aba ``participante``, com os seguintes dados:
 
@@ -124,7 +124,7 @@ Disponibilizado uma collection com os comandos dos CRUDs das rotas: ``filmes`` ,
 
 Na imagem abaixo, mostrado a estrutura em Json, dados a serem inseridos e tipos dos dados esperados.
 
-![image-20211209221304523](C:\Users\wsr2k\AppData\Roaming\Typora\typora-user-images\image-20211209221304523.png)
+![](D:\mod4-projeto1-filmes\img\thunder.png)
 
 No quadro a esquerda, usando a estrutura Json, o usuário deverá inserir os seguintes campos e tipos esperados:
 
