@@ -34,6 +34,7 @@ model Participante {
   nome                String
   imagem              String
   nascimento          String
+  staff_ator          Boolean
   filme               Filme     @relation(fields: [filmeid], references: [id])
   filmeid             Int
 }

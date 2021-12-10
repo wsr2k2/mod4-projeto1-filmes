@@ -1,4 +1,4 @@
-import { IsInt, IsNotEmpty, IsString } from "class-validator";
+import { IsBoolean, IsInt, IsNotEmpty, IsString } from "class-validator";
 
 export class CreateParticipanteDto {
   id: number;
@@ -14,6 +14,10 @@ export class CreateParticipanteDto {
   @IsNotEmpty()
   @IsString()
   nascimento: string;
+
+  @IsNotEmpty()
+  @IsBoolean()
+  staff_ator: boolean;
 
   @IsNotEmpty()
   @IsInt()
