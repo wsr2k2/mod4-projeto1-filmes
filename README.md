@@ -107,6 +107,7 @@ Logo após o cadastro do filme, caso o usuário desejar, pode cadastrar quem est
 * Nome
 * Url da imagem
 * Nascimento
+* Staff ou Ator { 0 = staff / 1 = ator }
 * Escolher o filme a qual participou
 
 Para deletar um registro, caso o filmes tenha um ``participante`` relacionado, o usuário primeiramente deve excluir o ``participante`` e após isso excluir o ``filme`` selecionado. Para isso basta selecionar o item e clicar em ``Delete 1 record`` em seguida ``Save 1 change``
