@@ -26,7 +26,7 @@ Devemos realizar o comando a seguir para a criação do Prisma Client e assim po
 
 Feito isso, será criado a pasta prisma>schema.prisma, local onde será criado nosso modelo de nosso cadastro no banco de dados, onde constam os campos e tipos de dados a serem recebidos, bem como a indicação de link entre os schemas (one to many).
 
-![schema](C:\Users\wsr2k\Desktop\schema.png)
+![alt schema](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/schema.png?raw=true)
 
 O schema utilizado em nosso projeto, foi conforme a imagem acima.
 
@@ -90,7 +90,7 @@ Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, c
 * Definir o ``gênero`` do filme (exemplo: Animação)
 * Clicar em ``SAVE 1 CHANGE.``
 
-![](D:\mod4-projeto1-filmes\img\cadastro genero.png)
+![alt cad_genero](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/cadastro%20genero.png?raw=true)
 
 Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``FILME``. Conforme imagem abaixo:
 
@@ -98,11 +98,11 @@ Agora com o gênero cadastrado podemos cadastrar nosso primeiro filme, na aba ``
 * Preencher os campos a seguir: ``nome`` , ``url imagem``, ``data de lançamento`` , ``duração do filme``, escolher o ``gênero`` na lista 
 * Clicar em ``Save 1 change``
 
-![](D:\mod4-projeto1-filmes\img\cadastro filme.png)
+![alt cad_filme](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/cadastro%20filme.png?raw=true)
 
 Após o cadastro, a tela ficará assim:
 
-![](D:\mod4-projeto1-filmes\img\filme cadastrado.png)
+![alt filme_cad](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/filme%20cadastrado.png?raw=true)
 
 Logo após o cadastro do filme, caso o usuário desejar, pode cadastrar quem estrelou ou co-estrelou o filme, bastando apenas inserir na aba ``participante``, com os seguintes dados:
 
@@ -124,7 +124,7 @@ Disponibilizado uma collection com os comandos dos CRUDs das rotas: ``filmes`` ,
 
 Na imagem abaixo, mostrado a estrutura em Json, dados a serem inseridos e tipos dos dados esperados.
 
-![](D:\mod4-projeto1-filmes\img\thunder.png)
+![alt thunder](https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/thunder.png?raw=true)
 
 No quadro a esquerda, usando a estrutura Json, o usuário deverá inserir os seguintes campos e tipos esperados:
 
