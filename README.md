@@ -81,7 +81,7 @@ Comando a ser realizado: ``npx prisma studio``
 
 Deverá abrir uma janela em seu navegador igual a esta:
 
-![](D:\mod4-projeto1-filmes\img\prisma.png)
+src="https://github.com/wsr2k2/mod4-projeto1-filmes/blob/master/img/prisma%20studio.png"
 
 Para realizar o primeiro cadastro de filme, antes devemos cadastrar o gênero, conforme a imagem abaixo:
 
